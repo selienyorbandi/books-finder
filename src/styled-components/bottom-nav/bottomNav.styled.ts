@@ -8,9 +8,9 @@ export const BottomNavContainer = styled.nav`
   position: fixed;
   bottom: 0;
   height: 70px;
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
--webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,6 +20,10 @@ export const BottomNavContainer = styled.nav`
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
+
+  @media screen and (min-width: 650px) {
+    display: none;
+  }
 `;
 
 export const BottomNavLinksContainer = styled.ul`
@@ -30,22 +34,22 @@ export const BottomNavLinksContainer = styled.ul`
 `;
 
 export const BottomNavLink = styled(NavLink)`
-text-decoration: none;
-filter: grayscale(1) contrast(.5);
-color: ${styledVariables.$primaryColor};
+  text-decoration: none;
+  filter: grayscale(1) contrast(0.5);
+  color: ${styledVariables.$primaryColor};
 
-&.active {
-  filter: none;
+  &.active {
+    filter: none;
   }
 `;
 
 export const BottomNavLinkItem = styled.li`
-display: flex;
-flex-direction: column-reverse;
-align-items: center;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
 `;
 
 export const BottomNavLinkImg = styled.img`
-width:25px;
-height: 25px;
+  width: 25px;
+  height: 25px;
 `;

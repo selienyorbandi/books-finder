@@ -73,3 +73,8 @@ export const ButtonOutline = styled(Button)`
     color: #fff;
   }
 `;
+
+export const ButtonRounded = styled(Button)`
+  border-radius: 35px;
+  padding: 10px 22px;
+`;
