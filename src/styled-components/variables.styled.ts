@@ -1,0 +1,18 @@
+export const styledVariables = {
+  $primaryColor: "#5925dc",
+  $primaryColorHover: "#5e26ec",
+  $primaryColorActive: "#4f21c4",
+  $secondaryColor: "#7879f1",
+  $secondaryColorHover: "#8a8aff",
+  $secondaryColorActive: "#5c5cc1",
+  $successColor: "#4cae4f",
+  $successColorHover: "#45ba4b",
+  $successColorActive: "#3b8f3c",
+  $dangerColor: "#f54239",
+  $dangerColorHover: "#df2f22",
+  $dangerColorActive: "#d2312d",
+  $backgroundMainColor: "#ffffff",
+  $backgroundSecondaryColor: "#fefefe",
+  $fontMainColor: "#1A1A1A",
+  $fontAltColor: "#767676",
+};
