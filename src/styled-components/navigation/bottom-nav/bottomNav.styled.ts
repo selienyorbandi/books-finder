@@ -1,4 +1,4 @@
-import { styledVariables } from "../variables.styled";
+import { styledVariables } from "../../variables.styled";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
@@ -6,6 +6,7 @@ export const BottomNavContainer = styled.nav`
   background: ${styledVariables.$backgroundSecondaryColor};
   width: 100%;
   position: fixed;
+  z-index: ${styledVariables.$zIndexFixed};
   bottom: 0;
   height: 70px;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);

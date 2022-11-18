@@ -200,6 +200,7 @@ export interface Book {
 export interface BookPreview {
   id: string;
   title: string;
+  author: string[];
   thumbnail: string;
 }
 
@@ -230,13 +231,10 @@ export const bookEmptyState: Book = {
   googleBookLink: "",
 };
 
-export const booksPreviewEmptyState: BookPreview[] = [
-  {
-    id: "",
-    title: "",
-    thumbnail: "",
-  },
-];
+export const booksPreviewEmptyState = {
+  page: 1,
+  books: [],
+};
 
 export const bookSliceEmptyState = {
   currentBook: bookEmptyState,

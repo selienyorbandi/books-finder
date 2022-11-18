@@ -1,7 +1,5 @@
-import { useSelector } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import { RootState } from "./redux/store";
-import { AppContainer } from "./styled-components/app-container/app-container.styled";
+import { AppContainer } from "./styled-components/layout/app-container/app-container.styled";
 import { GlobalStyle } from "./styled-components/globalStyles.styled";
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router";
@@ -11,8 +9,6 @@ import Navbar from "./components/navbar/Navbar";
 const Find = lazy(() => import("./pages/find/Find.page"));
 
 function App() {
-  const store = useSelector((state: RootState) => state.reducer);
-
   return (
     <AppContainer>
       <GlobalStyle />
@@ -21,7 +17,9 @@ function App() {
           <Navbar />
           <BottomNav />
           <Routes>
+            <Route path="/" element={<Find />} />
             <Route path="/find" element={<Find />} />
+            <Route path="/bookshelf" element={<Find />} />
           </Routes>
         </BrowserRouter>
       </Suspense>

@@ -1,4 +1,4 @@
-import { styledVariables } from "../variables.styled";
+import { styledVariables } from "../../variables.styled";
 import styled from "styled-components";
 import { NavLink, Link } from "react-router-dom";
 
@@ -10,6 +10,7 @@ export const NavContainer = styled.nav`
     background: ${styledVariables.$backgroundSecondaryColor};
     width: 100%;
     position: fixed;
+    z-index: ${styledVariables.$zIndexFixed};
     top: 0;
     height: 70px;
     justify-content: space-around;

@@ -8,8 +8,18 @@ const booksSlice = createSlice({
     resetBooks: () => {
       return bookSliceEmptyState;
     },
+    setBooksList: (state, action) => {
+      const booksList = {
+        ...state,
+        booksList: {
+          ...state.booksList,
+          books: action.payload,
+        },
+      };
+      return booksList;
+    },
   },
 });
 
-export const { resetBooks } = booksSlice.actions;
+export const { resetBooks, setBooksList } = booksSlice.actions;
 export default booksSlice.reducer;

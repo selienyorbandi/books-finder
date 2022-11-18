@@ -9,8 +9,19 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
-      font-family: "Urbanist", sans-serif;
-      font-weight: 700;
-      background: ${styledVariables.$backgroundMainColor};
-  }`;
+body {
+    font-family: "Urbanist", sans-serif;
+    font-weight: 700;
+    background: ${styledVariables.$backgroundMainColor};
+    color: ${styledVariables.$fontMainColor};
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+  
+  `;

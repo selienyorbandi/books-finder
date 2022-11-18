@@ -38,15 +38,22 @@ const handleBtnType = (btnType?: string) => {
   }
 };
 
-export const Button = styled.button<{ btnType: string }>`
+export const Button = styled.button<{
+  btnType: string;
+  btnHeight?: string;
+}>`
   position: relative;
   cursor: pointer;
   border-radius: 5px;
   padding: 15px 20px;
   border: none;
   font-size: 20px;
-  background: ${({ btnType }) => handleBtnType(btnType).basic};
   color: #fff;
+  height: ${({ btnHeight }) => (btnHeight ? btnHeight + "px" : "fit-content")};
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  background: ${({ btnType }) => handleBtnType(btnType).basic};
 
   &:focus,
   &:active {

@@ -4,7 +4,7 @@ import {
   BottomNavLinkImg,
   BottomNavLinkItem,
   BottomNavLinksContainer,
-} from "../../styled-components/bottom-nav/bottomNav.styled";
+} from "../../styled-components/navigation/bottom-nav/bottomNav.styled";
 import homeIco from "../../assets/img/icon _home_.png";
 import findIco from "../../assets/img/icon _Search_.png";
 import bookshelfIco from "../../assets/img/icon _library solid_.png";
