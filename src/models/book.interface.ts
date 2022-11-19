@@ -202,6 +202,7 @@ export interface BookPreview {
   title: string;
   author: string[];
   thumbnail: string;
+  description: string;
 }
 
 export const bookEmptyState: Book = {

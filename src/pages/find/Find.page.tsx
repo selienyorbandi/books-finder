@@ -1,6 +1,5 @@
 import { Button } from "../../styled-components/button/button.styled";
 import { MainContainer } from "../../styled-components/layout/layout.styled";
-import { H1 } from "../../styled-components/titles/h1/h1.styled";
 import { SearchForm, SearchInput } from "./styled-components/search.styled";
 import searchIcon from "../../assets/img/magnify.png";
 import { ChangeEvent, FormEvent, useState } from "react";
@@ -9,6 +8,7 @@ import { getBooksByQuery } from "../../services/books.service";
 import { useDispatch, useSelector } from "react-redux";
 import { setBooksList } from "../../redux/slices/books.slice";
 import { RootState } from "../../redux/store";
+import { H1 } from "../../styled-components/titles/titles.styled";
 
 function Find() {
   const booksList = useSelector((state: RootState) => state.reducer.booksList);
@@ -36,7 +36,7 @@ function Find() {
           <img src={searchIcon} alt="Search button" />
         </Button>
       </SearchForm>
-      {booksList ? <BookList bookList={booksList.books} /> : <></>}
+      {booksList ? <BookList bookList={booksList.books} detailed={true}/> : <></>}
     </MainContainer>
   );
 }

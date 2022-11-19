@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const AppContainer = styled.div`
+  font-family: "Urbanist", sans-serif;
+`;
+
 export const MainContainer = styled.main`
   padding: 1rem;
   display: flex;
@@ -7,9 +11,11 @@ export const MainContainer = styled.main`
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  margin-bottom: 80px;
 
   @media screen and (min-width: 650px) {
     margin-top: 80px;
+    margin-bottom: 0;
   }
 `;
 

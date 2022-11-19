@@ -1,13 +1,13 @@
+import homeIco from "../../assets/img/icon _home_.png";
+import findIco from "../../assets/img/icon _Search_.png";
+import bookshelfIco from "../../assets/img/icon _library solid_.png";
 import {
   BottomNavContainer,
   BottomNavLink,
   BottomNavLinkImg,
   BottomNavLinkItem,
   BottomNavLinksContainer,
-} from "../../styled-components/navigation/bottom-nav/bottomNav.styled";
-import homeIco from "../../assets/img/icon _home_.png";
-import findIco from "../../assets/img/icon _Search_.png";
-import bookshelfIco from "../../assets/img/icon _library solid_.png";
+} from "../../styled-components/navigation/bottomNav.styled";
 
 function BottomNav() {
   return (

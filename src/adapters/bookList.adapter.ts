@@ -7,6 +7,7 @@ export function adaptBookToBookPreview(bookApi: ApiBook) {
     title: bookApi.volumeInfo.title,
     author: bookApi.volumeInfo.authors,
     thumbnail: bookApi.volumeInfo.imageLinks ? bookApi.volumeInfo.imageLinks.thumbnail : "",
+    description: bookApi.volumeInfo.description
   };
 }
 

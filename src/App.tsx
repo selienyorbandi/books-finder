@@ -1,10 +1,10 @@
 import { BrowserRouter } from "react-router-dom";
-import { AppContainer } from "./styled-components/layout/app-container/app-container.styled";
 import { GlobalStyle } from "./styled-components/globalStyles.styled";
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router";
 import BottomNav from "./components/bottomNav/BottomNav";
 import Navbar from "./components/navbar/Navbar";
+import { AppContainer } from "./styled-components/layout/layout.styled";
 
 const Find = lazy(() => import("./pages/find/Find.page"));
 

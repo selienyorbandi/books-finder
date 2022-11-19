@@ -1,11 +1,26 @@
 import { BookPreview } from "../../models/book.interface";
-import { BookCover } from "../../styled-components/bookItem/bookCover.styled";
-import { BookItemContainer } from "../../styled-components/bookItem/bookItemContainer.styled";
-import { H2 } from "../../styled-components/titles/h2/h2.styled";
-import { H3 } from "../../styled-components/titles/h3/h3.styled";
+import {
+  BookCover,
+  BookItemContainer,
+  BookItemContent,
+  BookItemDescription,
+  BookItemDetailedContainer,
+} from "../../styled-components/bookItem/bookItem.styled";
+import { H2, H3 } from "../../styled-components/titles/titles.styled";
+import truncateStrings from "../../utils/truncateStrings";
 
-function BookItem({ book }: { book: BookPreview }) {
-  return (
+function BookItem({ book, detailed }: { book: BookPreview; detailed: boolean }) {
+  const author: string = book.author ? truncateStrings(book.author.toString(), 40) : "";
+  return detailed ? (
+    <BookItemDetailedContainer>
+      <BookCover src={book.thumbnail} alt={`${book.title} thumbnail`} width="80px" height="129px" />
+      <BookItemContent>
+        <H2 type="main" maxwidth={310}>{truncateStrings(book.title, 35)}</H2>
+        <H3 type="alt">{author}</H3>
+        <BookItemDescription>{truncateStrings(book.description, 100)}</BookItemDescription>
+      </BookItemContent>
+    </BookItemDetailedContainer>
+  ) : (
     <BookItemContainer>
       <BookCover
         src={book.thumbnail}
@@ -13,8 +28,8 @@ function BookItem({ book }: { book: BookPreview }) {
         width="185px"
         height="294px"
       />
-      <H2>{book.title.length <= 17 ? book.title : book.title.slice(0, 17) + "..."}</H2>
-      <H3>{book.author ? book.author[0] : ""}</H3>
+      <H2 type="main">{truncateStrings(book.title, 17)}</H2>
+      <H3 type="main">{author}</H3>
     </BookItemContainer>
   );
 }

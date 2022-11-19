@@ -1,4 +1,4 @@
-import { styledVariables } from "../../variables.styled";
+import { styledVariables } from "../variables.styled";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 

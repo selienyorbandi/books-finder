@@ -8,7 +8,7 @@ import {
   NavLinkItem,
   NavLinksContainer,
   NavLoginContainer,
-} from "../../styled-components/navigation/navbar/navbar.styled";
+} from "../../styled-components/navigation/navbar.styled";
 import brandLogo from "../../assets/img/brand.jpg";
 import { ButtonRounded } from "../../styled-components/button/button.styled";
 function Navbar() {

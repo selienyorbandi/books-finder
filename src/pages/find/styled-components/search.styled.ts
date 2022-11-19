@@ -2,8 +2,8 @@ import { styledVariables } from "./../../../styled-components/variables.styled";
 import styled from "styled-components";
 
 export const SearchInput = styled.input.attrs({ type: "search" })`
-  width: 80vw;
-  max-width: 600px;
+  width: 75vw;
+  max-width: 860px;
   padding: 10px;
   border: solid 1px ${styledVariables.$grayBorderColor};
   border-radius: 5px;
@@ -15,6 +15,11 @@ export const SearchInput = styled.input.attrs({ type: "search" })`
     -webkit-box-shadow: 1px 1px 4px 0px rgba(118, 118, 118, 0.25);
     -moz-box-shadow: 1px 1px 4px 0px rgba(118, 118, 118, 0.25);
   }
+
+  @media screen and (min-width: 650px) {
+    width: 80vw;
+  }
+
 `;
 
 export const SearchForm = styled.form`
