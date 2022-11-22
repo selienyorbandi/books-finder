@@ -233,8 +233,11 @@ export const bookEmptyState: Book = {
 };
 
 export const booksPreviewEmptyState = {
-  page: 1,
   books: [],
+  pagination: {
+    totalItems: 1,
+    currentPage: 1,
+  },
 };
 
 export const bookSliceEmptyState = {

@@ -6,14 +6,32 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import BookList from "../../components/bookList/BookList";
 import { getBooksByQuery } from "../../services/books.service";
 import { useDispatch, useSelector } from "react-redux";
-import { setBooksList } from "../../redux/slices/books.slice";
+import { setBooksList, setCurrentPage, setTotalItems } from "../../redux/slices/books.slice";
 import { RootState } from "../../redux/store";
 import { H1 } from "../../styled-components/titles/titles.styled";
+import Paginator from "../../components/paginator/Paginator";
+import { adaptBookListToBookPreviewList } from "../../adapters/bookList.adapter";
+import { useSearchParams } from "react-router-dom";
+import Loader from "../../components/loader/Loader";
 
 function Find() {
   const booksList = useSelector((state: RootState) => state.reducer.booksList);
+  const pagination = booksList.pagination;
+
   const dispatch = useDispatch();
   const [keywords, setKeywords] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [loading, setLoading] = useState(false);
+
+  const fetchBooks = async (page?: number) => {
+    setLoading(true);
+    setSearchParams({ ...searchParams, q: keywords, page: `${page || pagination.currentPage}` });
+    const result = await getBooksByQuery(keywords, page || pagination.currentPage, 10);
+    dispatch(setBooksList(adaptBookListToBookPreviewList(result.items)));
+    if (page === 1 || pagination.currentPage === 1) {
+      dispatch(setTotalItems(result.totalItems));
+    }
+  };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setKeywords(e.target.value);
@@ -21,8 +39,13 @@ function Find() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const result = await getBooksByQuery(keywords, 1);
-    dispatch(setBooksList(result));
+    dispatch(setCurrentPage(1));
+    fetchBooks(1).finally(() => setLoading(false));
+  };
+
+  const handlePageChange = async (page: number) => {
+    dispatch(setCurrentPage(page));
+    fetchBooks(page).finally(() => setLoading(false));
   };
 
   return (
@@ -36,7 +59,21 @@ function Find() {
           <img src={searchIcon} alt="Search button" />
         </Button>
       </SearchForm>
-      {booksList ? <BookList bookList={booksList.books} detailed={true}/> : <></>}
+      {loading ? (
+        <Loader />
+      ) : booksList ? (
+        <>
+          <BookList bookList={booksList.books} detailed={true} />
+          <Paginator
+            currentPage={pagination.currentPage}
+            totalItems={pagination.totalItems}
+            itemsPerPage={10}
+            onPageChange={(page: number) => handlePageChange(page)}
+          />
+        </>
+      ) : (
+        <></>
+      )}
     </MainContainer>
   );
 }

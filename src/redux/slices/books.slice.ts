@@ -18,8 +18,34 @@ const booksSlice = createSlice({
       };
       return booksList;
     },
+    setTotalItems: (state, action) => {
+      const booksList = {
+        ...state,
+        booksList: {
+          ...state.booksList,
+          pagination: {
+            ...state.booksList.pagination,
+            totalItems: action.payload,
+          },
+        },
+      };
+      return booksList;
+    },
+    setCurrentPage: (state, action) => {
+      const booksList = {
+        ...state,
+        booksList: {
+          ...state.booksList,
+          pagination: {
+            ...state.booksList.pagination,
+            currentPage: action.payload,
+          },
+        },
+      };
+      return booksList;
+    },
   },
 });
 
-export const { resetBooks, setBooksList } = booksSlice.actions;
+export const { resetBooks, setBooksList, setTotalItems, setCurrentPage } = booksSlice.actions;
 export default booksSlice.reducer;

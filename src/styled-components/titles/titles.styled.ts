@@ -12,7 +12,7 @@ export const H2 = styled.h2<{ type: string; maxwidth?: number }>`
     type === "main" ? styledVariables.$fontMainColor : styledVariables.$fontAltColor};
   font-size: 1.25rem;
   font-weight: 600;
-  
+
   @media screen and (min-width: 400px) {
     max-width: ${({ maxwidth }) => maxwidth + "px" || "none"};
     text-overflow: ellipsis;

@@ -19,7 +19,6 @@ export const SearchInput = styled.input.attrs({ type: "search" })`
   @media screen and (min-width: 650px) {
     width: 80vw;
   }
-
 `;
 
 export const SearchForm = styled.form`
