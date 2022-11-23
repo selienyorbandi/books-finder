@@ -18,6 +18,14 @@ const booksSlice = createSlice({
       };
       return booksList;
     },
+    setCurrentBook: (state, action) => {
+      const currentBook = {
+        ...state,
+        currentBook: action.payload,
+      };
+      console.log(action.payload);
+      return currentBook;
+    },
     setTotalItems: (state, action) => {
       const booksList = {
         ...state,
@@ -47,5 +55,6 @@ const booksSlice = createSlice({
   },
 });
 
-export const { resetBooks, setBooksList, setTotalItems, setCurrentPage } = booksSlice.actions;
+export const { resetBooks, setBooksList, setCurrentBook, setTotalItems, setCurrentPage } =
+  booksSlice.actions;
 export default booksSlice.reducer;

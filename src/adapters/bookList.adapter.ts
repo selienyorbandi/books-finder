@@ -1,7 +1,7 @@
 import { BookPreview } from "./../models/book.interface";
 import { ApiBook } from "../models/book.interface";
 
-export function adaptBookToBookPreview(bookApi: ApiBook) {
+export function adaptBookToBookPreview(bookApi: ApiBook): BookPreview {
   return {
     id: bookApi.id,
     title: bookApi.volumeInfo.title,
@@ -11,7 +11,7 @@ export function adaptBookToBookPreview(bookApi: ApiBook) {
   };
 }
 
-export function adaptBookListToBookPreviewList(booksApi: ApiBook[]) {
+export function adaptBookListToBookPreviewList(booksApi: ApiBook[]): BookPreview[] {
   const adaptedBookList: BookPreview[] = [];
   booksApi.forEach(book => {
     if (book.volumeInfo.imageLinks) {
