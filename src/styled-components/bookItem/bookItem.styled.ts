@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { styledVariables } from "../variables.styled";
 
 export const BookItemContainer = styled.li`
-  width: 185px;
   height: 350px;
   display: flex;
   flex-direction: column;
@@ -16,7 +15,7 @@ export const BookCover = styled.img`
 `;
 
 export const BookItemDetailedContainer = styled.li`
-  width: 100%;
+  width: calc(100vw - 1rem);
   min-width: 300px;
   max-width: 450px;
   display: flex;

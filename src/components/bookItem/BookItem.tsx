@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { BookPreview } from "../../models/book.interface";
 import {
   BookCover,
@@ -12,16 +13,23 @@ import truncateStrings from "../../utils/truncateStrings";
 function BookItem({ book, detailed }: { book: BookPreview; detailed: boolean }) {
   const author: string = book.author ? truncateStrings(book.author.toString(), 40) : "";
   return detailed ? (
-    <BookItemDetailedContainer>
-      <BookCover src={book.thumbnail} alt={`${book.title} thumbnail`} width="80px" height="129px" />
-      <BookItemContent>
-        <H2 type="main" maxwidth={310}>
-          {truncateStrings(book.title, 35)}
-        </H2>
-        <H3 type="alt">{author}</H3>
-        <BookItemDescription>{truncateStrings(book.description, 100)}</BookItemDescription>
-      </BookItemContent>
-    </BookItemDetailedContainer>
+    <Link to={`/book/${book.id}`}>
+      <BookItemDetailedContainer>
+        <BookCover
+          src={book.thumbnail}
+          alt={`${book.title} thumbnail`}
+          width="80px"
+          height="129px"
+        />
+        <BookItemContent>
+          <H2 type="main" maxwidth={310}>
+            {truncateStrings(book.title, 35)}
+          </H2>
+          <H3 type="alt">{author}</H3>
+          <BookItemDescription>{truncateStrings(book.description, 100)}</BookItemDescription>
+        </BookItemContent>
+      </BookItemDetailedContainer>
+    </Link>
   ) : (
     <BookItemContainer>
       <BookCover

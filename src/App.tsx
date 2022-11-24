@@ -7,6 +7,7 @@ import Navbar from "./components/navbar/Navbar";
 import { AppContainer } from "./styled-components/layout/layout.styled";
 
 const Find = lazy(() => import("./pages/find/Find.page"));
+const Book = lazy(() => import("./pages/book/Book.page"));
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/" element={<Find />} />
             <Route path="/find" element={<Find />} />
             <Route path="/bookshelf" element={<Find />} />
+            <Route path="/book/:id" element={<Book />} />
           </Routes>
         </BrowserRouter>
       </Suspense>

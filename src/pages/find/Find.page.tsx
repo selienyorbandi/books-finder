@@ -13,6 +13,7 @@ import Paginator from "../../components/paginator/Paginator";
 import { adaptBookListToBookPreviewList } from "../../adapters/bookList.adapter";
 import { useSearchParams } from "react-router-dom";
 import Loader from "../../components/loader/Loader";
+import poweredByGoogle from "../../assets/img/powered-by-google.png";
 
 function Find() {
   const booksList = useSelector((state: RootState) => state.reducer.booksList);
@@ -29,7 +30,8 @@ function Find() {
     const result = await getBooksByQuery(keywords, page || pagination.currentPage, 10);
     dispatch(setBooksList(adaptBookListToBookPreviewList(result.items)));
     if (page === 1 || pagination.currentPage === 1) {
-      dispatch(setTotalItems(result.totalItems));
+      //Google Books API shows a lot of duplicate results, so above 300 (or so) there is useless data
+      dispatch(setTotalItems(result.totalItems > 300 ? 300 : result.totalItems));
     }
   };
 
@@ -59,6 +61,7 @@ function Find() {
           <img src={searchIcon} alt="Search button" />
         </Button>
       </SearchForm>
+      <img src={poweredByGoogle} alt="Powered by Google" width="90px" height="12.3px" />
       {loading ? (
         <Loader />
       ) : booksList ? (

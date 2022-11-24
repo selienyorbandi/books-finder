@@ -23,7 +23,6 @@ const booksSlice = createSlice({
         ...state,
         currentBook: action.payload,
       };
-      console.log(action.payload);
       return currentBook;
     },
     setTotalItems: (state, action) => {

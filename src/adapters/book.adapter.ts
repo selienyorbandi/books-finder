@@ -9,20 +9,20 @@ export function adaptBook(bookApi: ApiBook): Book {
   return {
     id: bookApi.id,
     title: volume.title,
-    subtitle: volume.subtitle,
-    authors: volume.authors,
+    subtitle: volume.subtitle || "",
+    authors: volume.authors || [],
     publisher: volume.publisher,
     publishedDate: volume.publishedDate,
-    description: volume.description, //DOMParser
+    description: volume.description || "", //DOMParser
     isbn_10: isbn._10,
     isbn_13: isbn._13,
-    pageCount: volume.pageCount,
-    printType: volume.printType,
-    categories: volume.categories,
+    pageCount: volume.pageCount || 0,
+    printType: volume.printType || "",
+    categories: volume.categories || [],
     averageRating: volume.averageRating,
     imageLinks: volume.imageLinks,
-    language: volume.language,
-    previewLink: volume.previewLink,
-    googleBookLink: volume.canonicalVolumeLink,
+    language: volume.language || "",
+    previewLink: volume.previewLink || "",
+    googleBookLink: volume.canonicalVolumeLink || "",
   };
 }

@@ -6,6 +6,6 @@ export const BookListContainer = styled.ul`
   justify-content: center;
   row-gap: 2rem;
   column-gap: 1rem;
-  max-width: 1000px;
+  max-width: 1400px;
   padding-top: 1rem;
 `;

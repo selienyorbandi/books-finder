@@ -22,6 +22,11 @@ a {
 
 li {
     list-style: none;
+    font-weight: 700;
 }
-  
+ 
+p, div {
+    font-weight: 500;
+}
+
   `;
