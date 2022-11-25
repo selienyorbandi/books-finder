@@ -8,6 +8,7 @@ import { AppContainer } from "./styled-components/layout/layout.styled";
 
 const Find = lazy(() => import("./pages/find/Find.page"));
 const Book = lazy(() => import("./pages/book/Book.page"));
+const SignIn = lazy(() => import("./pages/sign-in/Sign-in.page"));
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
             <Route path="/find" element={<Find />} />
             <Route path="/bookshelf" element={<Find />} />
             <Route path="/book/:id" element={<Book />} />
+            <Route path="/login" element={<SignIn />} />
+            <Route path="/register" element={<SignIn />} />
           </Routes>
         </BrowserRouter>
       </Suspense>

@@ -16,7 +16,7 @@ import Loader from "../../components/loader/Loader";
 import poweredByGoogle from "../../assets/img/powered-by-google.png";
 
 function Find() {
-  const booksList = useSelector((state: RootState) => state.reducer.booksList);
+  const booksList = useSelector((state: RootState) => state.booksReducer.booksList);
   const pagination = booksList.pagination;
 
   const dispatch = useDispatch();

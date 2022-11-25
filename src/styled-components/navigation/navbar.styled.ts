@@ -4,6 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 
 export const NavContainer = styled.nav`
   display: none;
+  max-width: 1420px;
 
   @media screen and (min-width: 650px) {
     display: flex;
@@ -13,7 +14,7 @@ export const NavContainer = styled.nav`
     z-index: ${styledVariables.$zIndexFixed};
     top: 0;
     height: 70px;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 10px;
     -webkit-user-select: none;
@@ -24,7 +25,9 @@ export const NavContainer = styled.nav`
   }
 `;
 
-export const NavBrand = styled(Link)``;
+export const NavBrand = styled(Link)`
+  width: 186px;
+`;
 
 export const NavBrandLogo = styled.img`
   height: 50px;
@@ -35,7 +38,7 @@ export const NavLinksContainer = styled.ul`
   max-width: 300px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 `;
 
 export const NavLinkA = styled(NavLink)`

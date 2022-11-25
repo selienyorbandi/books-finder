@@ -25,7 +25,7 @@ import { BookCover } from "../../styled-components/bookItem/bookItem.styled";
 import poweredByGoogle from "../../assets/img/powered-by-google.png";
 
 function Book() {
-  const book = useSelector((state: RootState) => state.reducer.currentBook);
+  const book = useSelector((state: RootState) => state.booksReducer.currentBook);
   const dispatch = useDispatch();
 
   const { id } = useParams();

@@ -1,0 +1,6 @@
+/* Google tap-in signIn */
+#credential_picker_container {
+  margin: auto !important;
+  right: 150px !important;
+  top: 5px !important;
+}

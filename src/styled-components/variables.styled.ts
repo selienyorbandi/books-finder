@@ -17,5 +17,5 @@ export const styledVariables = {
   $fontAltColor: "#767676",
   $fontThirdColor: "#a9a9d1",
   $grayBorderColor: "#D2D2D2",
-  $zIndexFixed: 9999999999,
+  $zIndexFixed: 9999,
 };
