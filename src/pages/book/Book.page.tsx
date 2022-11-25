@@ -100,7 +100,20 @@ function Book() {
               </a>
             </Button>
           </BookButtons>
-          <img src={poweredByGoogle} alt="Powered by Google" width="100px" height="13.67px" />
+          {book.isEmbeddable ? (
+            <a
+              href={`https://play.google.com/books/reader?id=${id}`}
+              target="_blank"
+              rel="noreferrer">
+              <img
+                src="https://www.google.com/intl/en/googlebooks/images/gbs_preview_sticker1.png"
+                alt="Google Preview"
+                width="80px"
+              />
+            </a>
+          ) : (
+            <img src={poweredByGoogle} alt="Powered by Google" width="100px" height="13.67px" />
+          )}
         </LeftColumn>
       </BookWrapper>
     </MainContainer>

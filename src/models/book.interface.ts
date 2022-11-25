@@ -192,6 +192,7 @@ export interface Book {
     extraLarge: string;
   };
   language: string;
+  isEmbeddable: boolean;
   previewLink: string;
   googleBookLink: string;
 }
@@ -230,6 +231,7 @@ export const bookEmptyState: Book = {
   language: "",
   previewLink: "",
   googleBookLink: "",
+  isEmbeddable: false,
 };
 
 export const booksPreviewEmptyState = {

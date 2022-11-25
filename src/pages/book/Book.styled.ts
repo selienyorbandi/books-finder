@@ -150,6 +150,7 @@ export const LeftColumn = styled.div`
   flex-direction: column;
   gap: 1rem;
 
+  a,
   img {
     align-self: center;
   }

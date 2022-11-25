@@ -24,5 +24,6 @@ export function adaptBook(bookApi: ApiBook): Book {
     language: volume.language || "",
     previewLink: volume.previewLink || "",
     googleBookLink: volume.canonicalVolumeLink || "",
+    isEmbeddable: bookApi.accessInfo.embeddable,
   };
 }
