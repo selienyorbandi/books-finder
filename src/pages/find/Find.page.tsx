@@ -2,11 +2,16 @@ import { Button } from "../../styled-components/button/button.styled";
 import { MainContainer } from "../../styled-components/layout/layout.styled";
 import { SearchForm, SearchInput } from "./styled-components/search.styled";
 import searchIcon from "../../assets/img/magnify.png";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import BookList from "../../components/bookList/BookList";
 import { getBooksByQuery } from "../../services/books.service";
 import { useDispatch, useSelector } from "react-redux";
-import { setBooksList, setCurrentPage, setTotalItems } from "../../redux/slices/books.slice";
+import {
+  resetBooks,
+  setBooksList,
+  setCurrentPage,
+  setTotalItems,
+} from "../../redux/slices/books.slice";
 import { RootState } from "../../redux/store";
 import { H1 } from "../../styled-components/titles/titles.styled";
 import Paginator from "../../components/paginator/Paginator";
@@ -24,14 +29,22 @@ function Find() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
 
-  const fetchBooks = async (page?: number) => {
-    setLoading(true);
-    setSearchParams({ ...searchParams, q: keywords, page: `${page || pagination.currentPage}` });
-    const result = await getBooksByQuery(keywords, page || pagination.currentPage, 10);
-    dispatch(setBooksList(adaptBookListToBookPreviewList(result.items)));
-    if (page === 1 || pagination.currentPage === 1) {
-      //Google Books API shows a lot of duplicate results, so above 300 (or so) there is useless data
-      dispatch(setTotalItems(result.totalItems > 300 ? 300 : result.totalItems));
+  const fetchBooks = async (page?: number, query?: string) => {
+    if (keywords || query) {
+      setLoading(true);
+      setSearchParams({
+        ...searchParams,
+        q: query || keywords,
+        page: `${page || pagination.currentPage}`,
+      });
+      const result = await getBooksByQuery(query || keywords, page || pagination.currentPage, 10);
+      dispatch(setBooksList(adaptBookListToBookPreviewList(result.items)));
+      if (page === 1 || pagination.currentPage === 1) {
+        //Google Books API shows a lot of duplicate results, so above 300 (or so) there is useless data
+        dispatch(setTotalItems(result.totalItems > 300 ? 300 : result.totalItems));
+      }
+    } else {
+      dispatch(resetBooks());
     }
   };
 
@@ -49,6 +62,15 @@ function Find() {
     dispatch(setCurrentPage(page));
     fetchBooks(page).finally(() => setLoading(false));
   };
+
+  useEffect(() => {
+    const query = searchParams.get("q");
+    if (query) {
+      setKeywords(query);
+      dispatch(setCurrentPage(1));
+      fetchBooks(1, query).finally(() => setLoading(false));
+    }
+  }, [searchParams]);
 
   return (
     <MainContainer>

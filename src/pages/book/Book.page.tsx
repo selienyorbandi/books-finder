@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { adaptBook } from "../../adapters/book.adapter";
 import { setCurrentBook } from "../../redux/slices/books.slice";
 import { RootState } from "../../redux/store";
@@ -67,7 +67,9 @@ function Book() {
             <h3>Categories</h3>
             <ul>
               {getCategories().map((category, index) => (
-                <BookCategory key={`${category}#${index}`}>{category}</BookCategory>
+                <BookCategory key={`${category}#${index}`}>
+                  <Link to={`/find?q=subject:${category}`}>{category}</Link>
+                </BookCategory>
               ))}
             </ul>
           </BookCategories>

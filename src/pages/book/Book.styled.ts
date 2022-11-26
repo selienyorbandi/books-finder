@@ -100,6 +100,20 @@ export const BookCategory = styled.li`
   border: solid 1px ${styledVariables.$secondaryColor};
   border-radius: 5px;
   padding: 5px;
+
+  a {
+    color: ${styledVariables.$secondaryColor};
+  }
+
+  &:hover,
+  &:active {
+    background: ${styledVariables.$secondaryColor};
+  }
+
+  &:hover a,
+  &:active a {
+    color: ${styledVariables.$backgroundMainColor};
+  }
 `;
 
 export const BookExtraDetails = styled.section`
