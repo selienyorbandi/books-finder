@@ -1,7 +1,7 @@
+import { GoogleAuthJWTDecoded, GoogleAuthRes } from "../models/authentication.interface";
 import jwt_decode from "jwt-decode";
-import { GoogleAuthJWTDecoded, GoogleAuthRes, UserInfo } from "./../models/user.interface";
 
-export function adaptUser(authRes: GoogleAuthRes): UserInfo {
+export function adaptAuthentication(authRes: GoogleAuthRes) {
   const decodedJWT: GoogleAuthJWTDecoded = jwt_decode(authRes.credential);
 
   return {

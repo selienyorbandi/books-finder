@@ -1,5 +1,3 @@
-//? ------------------------ API MODELS -------------------------------------------------
-
 export interface GoogleAuthRes {
   clientId: string;
   client_id: string;
@@ -25,16 +23,14 @@ export interface GoogleAuthJWTDecoded {
   jti: string;
 }
 
-//* ------------------------ APP MODELS -------------------------------------------------
-
-export interface UserInfo {
+export interface authenticationSliceState {
   jwt: string;
   email: string;
   name: string;
   picture: string;
 }
 
-export const userSliceEmptyState = {
+export const authenticationSliceEmptyState = {
   jwt: "",
   email: "",
   name: "",

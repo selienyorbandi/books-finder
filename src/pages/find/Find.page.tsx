@@ -73,7 +73,7 @@ function Find() {
   }, [searchParams]);
 
   return (
-    <MainContainer>
+    <MainContainer hasMarginTop>
       <header>
         <H1>Let&apos;s find you a book!</H1>
       </header>

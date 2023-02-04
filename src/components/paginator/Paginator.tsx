@@ -39,7 +39,7 @@ function Paginator({
   const onPrevious = () => {
     onPageChange(currentPage - 1);
   };
-  
+
   return (
     <PaginatorContainer>
       <li onClick={onPrevious}>
