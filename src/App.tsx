@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router";
 import BottomNav from "./components/bottomNav/BottomNav";
 import Navbar from "./components/navbar/Navbar";
 import { AppContainer } from "./styled-components/layout/layout.styled";
+import Loader from "./components/loader/Loader";
 
 const Find = lazy(() => import("./pages/find/Find.page"));
 const Book = lazy(() => import("./pages/book/Book.page"));
@@ -14,7 +15,7 @@ function App() {
   return (
     <AppContainer>
       <GlobalStyle />
-      <Suspense fallback={<></> /* loading */}>
+      <Suspense fallback={<Loader />}>
         <BrowserRouter>
           <Navbar />
           <BottomNav />

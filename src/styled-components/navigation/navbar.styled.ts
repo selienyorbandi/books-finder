@@ -6,7 +6,7 @@ export const NavContainer = styled.nav`
   display: none;
   max-width: 1420px;
 
-  @media screen and (min-width: 650px) {
+  @media screen and (min-width: 750px) {
     display: flex;
     background: ${styledVariables.$backgroundSecondaryColor};
     width: 100%;
@@ -16,7 +16,7 @@ export const NavContainer = styled.nav`
     height: 70px;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 25px;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -26,7 +26,7 @@ export const NavContainer = styled.nav`
 `;
 
 export const NavBrand = styled(Link)`
-  width: 186px;
+  width: 130px;
 `;
 
 export const NavBrandLogo = styled.img`

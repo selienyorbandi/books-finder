@@ -22,7 +22,7 @@ export const BottomNavContainer = styled.nav`
   -o-user-select: none;
   user-select: none;
 
-  @media screen and (min-width: 650px) {
+  @media screen and (min-width: 750px) {
     display: none;
   }
 `;

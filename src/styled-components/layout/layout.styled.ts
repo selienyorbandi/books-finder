@@ -9,6 +9,7 @@ export const AppContainer = styled.div`
 export const MainContainer = styled.main<{
   hasMarginTop?: boolean;
 }>`
+  height: 100%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
