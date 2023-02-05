@@ -70,7 +70,7 @@ function Find() {
       dispatch(setCurrentPage(1));
       fetchBooks(1, query).finally(() => setLoading(false));
     }
-  }, [searchParams]);
+  }, [searchParams.get("q")]);
 
   return (
     <MainContainer hasMarginTop>
