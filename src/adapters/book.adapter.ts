@@ -19,7 +19,7 @@ export function adaptBook(bookApi: ApiBook): Book {
     pageCount: volume.pageCount || 0,
     printType: volume.printType || "",
     categories: volume.categories || [],
-    averageRating: volume.averageRating,
+    averageRating: volume.averageRating || NaN,
     imageLinks: volume.imageLinks,
     language: volume.language || "",
     previewLink: volume.previewLink || "",

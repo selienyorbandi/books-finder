@@ -11,7 +11,7 @@ import { H2, H3 } from "../../styled-components/titles/titles.styled";
 import truncateStrings from "../../utils/truncateStrings";
 
 function BookItem({ book, detailed }: { book: BookPreview; detailed: boolean }) {
-  const author: string = book.author ? truncateStrings(book.author.toString(), 40) : "";
+  const author: string = truncateStrings(book.author.toString(), 40);
   return detailed ? (
     <Link to={`/book/${book.id}`}>
       <BookItemDetailedContainer>
@@ -25,22 +25,24 @@ function BookItem({ book, detailed }: { book: BookPreview; detailed: boolean }) 
           <H2 type="main" maxwidth={310}>
             {truncateStrings(book.title, 35)}
           </H2>
-          <H3 type="alt">{author}</H3>
+          {book.author.length && <H3 type="alt">{author}</H3>}
           <BookItemDescription>{truncateStrings(book.description, 100)}</BookItemDescription>
         </BookItemContent>
       </BookItemDetailedContainer>
     </Link>
   ) : (
-    <BookItemContainer>
-      <BookCover
-        src={book.thumbnail}
-        alt={`${book.title} thumbnail`}
-        width="185px"
-        height="294px"
-      />
-      <H2 type="main">{truncateStrings(book.title, 17)}</H2>
-      <H3 type="main">{author}</H3>
-    </BookItemContainer>
+    <Link to={`/book/${book.id}`}>
+      <BookItemContainer>
+        <BookCover
+          src={book.thumbnail}
+          alt={`${book.title} thumbnail`}
+          width="185px"
+          height="294px"
+        />
+        <H2 type="main">{truncateStrings(book.title, 17)}</H2>
+        {book.author.length && <H3 type="main">{author}</H3>}
+      </BookItemContainer>
+    </Link>
   );
 }
 

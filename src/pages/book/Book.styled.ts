@@ -32,7 +32,11 @@ export const BookTitle = styled.h1`
   font-size: 3rem;
 `;
 
-export const BookAuthors = styled.h2`
+export const BookSubtitle = styled.h2`
+  font-size: 2rem;
+`;
+
+export const BookAuthors = styled.h3`
   font-size: 1.4rem;
   color: ${styledVariables.$fontAltColor};
 
@@ -54,9 +58,9 @@ export const BookDescription = styled.section`
     padding: 1rem;
   }
 
-  h3 {
+  h4 {
     background: ${styledVariables.$grayBorderColor};
-    font-size: 1.5;
+    font-size: 1.25rem;
     padding: 1.3rem 1rem;
   }
 
@@ -82,9 +86,9 @@ export const BookCategories = styled.section`
   border-radius: 5px;
   overflow: auto;
 
-  h3 {
+  h4 {
     background: ${styledVariables.$grayBorderColor};
-    font-size: 1.5;
+    font-size: 1.25rem;
     padding: 1.3rem 1rem;
   }
   ul {
@@ -129,9 +133,9 @@ export const BookExtraDetail = styled.div`
   border: solid 1px ${styledVariables.$grayBorderColor};
   border-radius: 5px;
 
-  h3 {
+  h4 {
     background: ${styledVariables.$grayBorderColor};
-    font-size: 1.5;
+    font-size: 1rem;
     padding: 0.5rem 1rem;
   }
 

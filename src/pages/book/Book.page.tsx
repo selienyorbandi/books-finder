@@ -17,6 +17,7 @@ import {
   BookDetails,
   BookExtraDetail,
   BookExtraDetails,
+  BookSubtitle,
   BookTitle,
   BookWrapper,
   LeftColumn,
@@ -48,23 +49,29 @@ function Book() {
     const uniqueCategories = new Set(categories);
     return [...uniqueCategories];
   };
-
+  console.log(book);
   return (
     <MainContainer>
       <BookWrapper>
         <BookDetails>
           <header>
             <BookTitle>{book.title}</BookTitle>
+            {book.subtitle && <BookSubtitle>{book.subtitle}</BookSubtitle>}
             <BookAuthors>
-              By <span>{book.authors}</span>
+              By{" "}
+              <span>
+                {book.authors.map(
+                  (author, i) => `${author}${i < book.authors.length - 1 ? ", " : ""}`
+                )}
+              </span>
             </BookAuthors>
           </header>
           <BookDescription>
-            <h3>Description</h3>
+            <h4>Description</h4>
             <div>{parse(book.description)}</div>
           </BookDescription>
           <BookCategories>
-            <h3>Categories</h3>
+            <h4>Categories</h4>
             <ul>
               {getCategories().map((category, index) => (
                 <BookCategory key={`${category}#${index}`}>
@@ -75,19 +82,19 @@ function Book() {
           </BookCategories>
           <BookExtraDetails>
             <BookExtraDetail>
-              <h3>Pages</h3>
+              <h4>Pages</h4>
               <p>{book.pageCount}</p>
             </BookExtraDetail>
             <BookExtraDetail>
-              <h3>ISBN</h3>
+              <h4>ISBN</h4>
               <p>{book.isbn_13}</p>
             </BookExtraDetail>
             <BookExtraDetail>
-              <h3>Publisher</h3>
+              <h4>Publisher</h4>
               <p>{book.publisher}</p>
             </BookExtraDetail>
             <BookExtraDetail>
-              <h3>Published Date</h3>
+              <h4>Published Date</h4>
               <p>{book.publishedDate}</p>
             </BookExtraDetail>
           </BookExtraDetails>
