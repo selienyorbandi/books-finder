@@ -1,8 +1,8 @@
-import { describe, beforeEach, afterEach } from "vitest";
-import BookItem from "./BookItem";
+import { describe, beforeEach, afterEach, it } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
+import BookItem from "./BookItem";
+import { MemoryRouter } from "react-router-dom";
 import truncateStrings from "../../utils/truncateStrings";
 import arrayOfStringsToString from "../../utils/arrayOfStringsToString";
 
