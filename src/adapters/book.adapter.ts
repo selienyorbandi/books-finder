@@ -2,10 +2,7 @@ import { ApiBook, Book } from "./../models/book.interface";
 
 export function adaptBook(bookApi: ApiBook): Book {
   const volume = bookApi.volumeInfo;
-  const isbn = {
-    _10: volume.industryIdentifiers.find(isbn => isbn.type === "ISBN_10")?.identifier || "",
-    _13: volume.industryIdentifiers.find(isbn => isbn.type === "ISBN_13")?.identifier || "",
-  };
+
   return {
     id: bookApi.id,
     title: volume.title,
@@ -14,8 +11,8 @@ export function adaptBook(bookApi: ApiBook): Book {
     publisher: volume.publisher,
     publishedDate: volume.publishedDate,
     description: volume.description || "", //DOMParser
-    isbn_10: isbn._10,
-    isbn_13: isbn._13,
+    isbn_10: volume.industryIdentifiers.find(isbn => isbn.type === "ISBN_10")?.identifier || "",
+    isbn_13: volume.industryIdentifiers.find(isbn => isbn.type === "ISBN_13")?.identifier || "",
     pageCount: volume.pageCount || 0,
     printType: volume.printType || "",
     categories: volume.categories || [],
