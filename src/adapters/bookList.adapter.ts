@@ -5,9 +5,9 @@ export function adaptBookToBookPreview(bookApi: ApiBook): BookPreview {
   return {
     id: bookApi.id,
     title: bookApi.volumeInfo.title,
-    author: bookApi.volumeInfo.authors,
+    author: bookApi.volumeInfo.authors || [],
     thumbnail: bookApi.volumeInfo.imageLinks ? bookApi.volumeInfo.imageLinks.thumbnail : "",
-    description: bookApi.volumeInfo.description,
+    description: bookApi.volumeInfo.description || "",
   };
 }
 
