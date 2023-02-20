@@ -2,14 +2,14 @@ import "./styles.css";
 
 function Loader() {
   return (
-    <div className="bookshelf_wrapper">
-      <ul className="books_list">
-        <li className="book_item first"></li>
-        <li className="book_item second"></li>
-        <li className="book_item third"></li>
-        <li className="book_item fourth"></li>
-        <li className="book_item fifth"></li>
-        <li className="book_item sixth"></li>
+    <div className="loader_wrapper">
+      <ul>
+        <li className="loader_part first"></li>
+        <li className="loader_part second"></li>
+        <li className="loader_part third"></li>
+        <li className="loader_part fourth"></li>
+        <li className="loader_part fifth"></li>
+        <li className="loader_part sixth"></li>
       </ul>
       <div className="shelf"></div>
     </div>

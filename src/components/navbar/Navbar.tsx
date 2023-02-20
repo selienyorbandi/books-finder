@@ -15,7 +15,7 @@ function Navbar() {
   return (
     <NavContainer>
       <NavBrand to="/">
-        <NavBrandLogo src={brandLogo} />
+        <NavBrandLogo src={brandLogo} alt="Books Finder Logo" />
       </NavBrand>
       <NavLinksContainer>
         <NavLinkA to="/" draggable="false">

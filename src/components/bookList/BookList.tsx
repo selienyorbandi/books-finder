@@ -4,7 +4,7 @@ import BookItem from "../bookItem/BookItem";
 
 function BookList({ bookList, detailed }: { bookList: BookPreview[]; detailed: boolean }) {
   return (
-    <BookListContainer>
+    <BookListContainer role={"booklist"}>
       {bookList.map(book =>
         book.title ? <BookItem book={book} key={book.id} detailed={detailed} /> : null
       )}

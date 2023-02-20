@@ -1,6 +1,7 @@
 import homeIco from "../../assets/img/icon _home_.png";
 import findIco from "../../assets/img/icon _Search_.png";
 import bookshelfIco from "../../assets/img/icon _library solid_.png";
+import userIco from "../../assets/img/icon_User.svg";
 import {
   BottomNavContainer,
   BottomNavLink,
@@ -32,6 +33,12 @@ function BottomNav() {
               src={bookshelfIco}
               alt="Bookshelf icon"
               draggable="false"></BottomNavLinkImg>
+          </BottomNavLinkItem>
+        </BottomNavLink>
+        <BottomNavLink to="/login" draggable="false">
+          <BottomNavLinkItem>
+            User
+            <BottomNavLinkImg src={userIco} alt="User icon" draggable="false"></BottomNavLinkImg>
           </BottomNavLinkItem>
         </BottomNavLink>
       </BottomNavLinksContainer>

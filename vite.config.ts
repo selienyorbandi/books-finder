@@ -9,7 +9,8 @@ export default defineConfig({
   test: {
     environment: "jsdom",
     coverage: {
-      provider: "istanbul",
+      provider: "c8",
+      exclude: ["**/*.styled.ts", "**/assets/*"],
     },
     globals: true,
   },

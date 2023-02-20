@@ -1,8 +1,10 @@
+import { describe, beforeEach, afterEach } from "vitest";
 import BookItem from "./BookItem";
 import { cleanup, render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 import truncateStrings from "../../utils/truncateStrings";
+import arrayOfStringsToString from "../../utils/arrayOfStringsToString";
 
 const bookPreviewMock = {
   id: "1a65afq",
@@ -29,7 +31,7 @@ describe("BookItem(book, detailed=false). Basic view.", () => {
 
   it("should display the book author", () => {
     const author = screen.getByText(
-      bookPreviewMock.author ? truncateStrings(bookPreviewMock.author.toString(), 40) : ""
+      truncateStrings(arrayOfStringsToString(bookPreviewMock.author), 40)
     );
     expect(author).toBeVisible();
   });

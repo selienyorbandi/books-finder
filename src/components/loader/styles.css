@@ -1,8 +1,8 @@
-.bookshelf_wrapper {
+.loader_wrapper {
   position: relative;
   margin-top: 200px;
 }
-.book_item {
+.loader_part {
   position: absolute;
   top: -120px;
   box-sizing: border-box;
@@ -15,12 +15,12 @@
   transform: translateX(300px);
   animation: travel 2500ms linear infinite;
 }
-.book_item.first {
+.loader_part.first {
   top: -140px;
   height: 140px;
 }
-.book_item.first:before,
-.book_item.first:after {
+.loader_part.first:before,
+.loader_part.first:after {
   content: "";
   position: absolute;
   top: 10px;
@@ -29,14 +29,14 @@
   height: 5px;
   background-color: white;
 }
-.book_item.first:after {
+.loader_part.first:after {
   top: initial;
   bottom: 10px;
 }
-.book_item.second:before,
-.book_item.fifth:before,
-.book_item.second:after,
-.book_item.fifth:after {
+.loader_part.second:before,
+.loader_part.fifth:before,
+.loader_part.second:after,
+.loader_part.fifth:after {
   box-sizing: border-box;
   content: "";
   position: absolute;
@@ -47,13 +47,13 @@
   border-top: 5px solid white;
   border-bottom: 5px solid white;
 }
-.book_item.second:after,
-.book_item.fifth:after {
+.loader_part.second:after,
+.loader_part.fifth:after {
   top: initial;
   bottom: 10px;
 }
-.book_item.third:before,
-.book_item.third:after {
+.loader_part.third:before,
+.loader_part.third:after {
   box-sizing: border-box;
   content: "";
   position: absolute;
@@ -64,15 +64,15 @@
   border-radius: 50%;
   border: 5px solid white;
 }
-.book_item.third:after {
+.loader_part.third:after {
   top: initial;
   bottom: 10px;
 }
-.book_item.fourth {
+.loader_part.fourth {
   top: -130px;
   height: 130px;
 }
-.book_item.fourth:before {
+.loader_part.fourth:before {
   box-sizing: border-box;
   content: "";
   position: absolute;
@@ -83,15 +83,15 @@
   border-top: 5px solid white;
   border-bottom: 5px solid white;
 }
-.book_item.fifth {
+.loader_part.fifth {
   top: -100px;
   height: 100px;
 }
-.book_item.sixth {
+.loader_part.sixth {
   top: -140px;
   height: 140px;
 }
-.book_item.sixth:before {
+.loader_part.sixth:before {
   box-sizing: border-box;
   content: "";
   position: absolute;
@@ -101,7 +101,7 @@
   height: 5px;
   background-color: white;
 }
-.book_item.sixth:after {
+.loader_part.sixth:after {
   box-sizing: border-box;
   content: "";
   position: absolute;
@@ -112,19 +112,19 @@
   border-radius: 50%;
   border: 5px solid white;
 }
-.book_item:nth-child(2) {
+.loader_part:nth-child(2) {
   animation-delay: 416.6666666667ms;
 }
-.book_item:nth-child(3) {
+.loader_part:nth-child(3) {
   animation-delay: 833.3333333333ms;
 }
-.book_item:nth-child(4) {
+.loader_part:nth-child(4) {
   animation-delay: 1250ms;
 }
-.book_item:nth-child(5) {
+.loader_part:nth-child(5) {
   animation-delay: 1666.6666666667ms;
 }
-.book_item:nth-child(6) {
+.loader_part:nth-child(6) {
   animation-delay: 2083.3333333333ms;
 }
 .shelf {

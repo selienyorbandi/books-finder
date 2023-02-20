@@ -42,7 +42,7 @@ function Paginator({
 
   return (
     <PaginatorContainer>
-      <li onClick={onPrevious}>
+      <li onClick={onPrevious} role="previous-page">
         <ChevronLeft color={styledVariables.$fontThirdColor} />
       </li>
       {paginationRange &&
@@ -63,7 +63,7 @@ function Paginator({
             </PageItem>
           );
         })}
-      <li onClick={onNext}>
+      <li onClick={onNext} role="next-page">
         <ChevronRight color={styledVariables.$fontThirdColor} />
       </li>
     </PaginatorContainer>
